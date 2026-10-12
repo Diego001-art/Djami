@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Замените ВАШ-ДОМЕН на адрес сайта. Новые статьи блога добавляйте сюда же. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://ВАШ-ДОМЕН/</loc></url>
+  <url><loc>https://ВАШ-ДОМЕН/zanyatiya.html</loc></url>
+  <url><loc>https://ВАШ-ДОМЕН/o-prepodavatele.html</loc></url>
+  <url><loc>https://ВАШ-ДОМЕН/blog.html</loc></url>
+  <url><loc>https://ВАШ-ДОМЕН/blog/angliyskie-frazy-dlya-pervoy-poezdki.html</loc></url>
+  <url><loc>https://ВАШ-ДОМЕН/blog/kak-rasskazat-o-sebe-na-angliyskom.html</loc></url>
+  <url><loc>https://ВАШ-ДОМЕН/blog/kak-podrostku-praktikovat-razgovornyy-angliyskiy.html</loc></url>
+  <url><loc>https://ВАШ-ДОМЕН/kontakty.html</loc></url>
+</urlset>
