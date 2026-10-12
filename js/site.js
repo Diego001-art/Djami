@@ -200,6 +200,13 @@ if (mobileCta && canObserve) {
 }
 
 // --- Формы записи ----------------------------------------------------------
+// После теста уровень приходит в адресе страницы — подставляем его в форму
+const levelFromTest = new URLSearchParams(location.search).get('level');
+const levelField = document.getElementById('f-level');
+if (levelFromTest && levelField && [...levelField.options].some((option) => option.value === levelFromTest)) {
+  levelField.value = levelFromTest;
+}
+
 document.querySelectorAll('form[data-lead]').forEach((form) => {
   const status = form.querySelector('.form-status');
   const button = form.querySelector('button[type="submit"]');

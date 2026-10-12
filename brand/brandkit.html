@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Фирменный стиль — Английский в Махачкале</title>
+<style>
+@font-face { font-family: "Manrope"; font-weight: 400 800; src: url("../fonts/manrope-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: "Manrope"; font-weight: 400 800; src: url("../fonts/manrope-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
+:root { --ink: #17163a; --violet: #6c5ce7; --pink: #d6589f; --bg: #f4f2ff; --mute: #5f5e82; }
+* { box-sizing: border-box; margin: 0; }
+body { background: #0f0e24; color: var(--ink); font: 400 16px/1.5 Manrope, system-ui, sans-serif; padding: 28px; }
+.board { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.p { position: relative; aspect-ratio: 4 / 3; border-radius: 20px; padding: 26px; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; background: var(--bg); }
+.p .n { position: absolute; left: 22px; top: 18px; font-size: 11px; letter-spacing: .12em; color: var(--mute); }
+.p .l { position: absolute; right: 22px; top: 18px; font-size: 11px; letter-spacing: .04em; color: var(--mute); }
+.dark { background: var(--ink); color: #fff; } .dark .n, .dark .l { color: #9d9ac9; }
+.grad { background: linear-gradient(135deg, #5b4bd6, #8a55d6 60%, #c9508f); color: #fff; } .grad .n, .grad .l { color: rgba(255,255,255,.8); }
+.soft { background: radial-gradient(360px 280px at 15% 10%, #d9d1ff, transparent 70%), radial-gradient(340px 280px at 90% 20%, #ffd9ec, transparent 70%), radial-gradient(400px 300px at 50% 105%, #cfeaff, transparent 70%), var(--bg); }
+svg.mark { display: block; }
+.lockup { display: flex; align-items: center; gap: 18px; }
+.lockup b { display: block; font-size: 34px; font-weight: 800; letter-spacing: -.03em; line-height: 1.05; }
+.lockup span { font-size: 24px; color: var(--mute); font-weight: 500; }
+.tag { font-size: clamp(26px, 3vw, 40px); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; text-align: center; }
+.sw { display: flex; gap: 10px; width: 100%; }
+.sw div { flex: 1; height: 120px; border-radius: 16px; display: flex; align-items: flex-end; padding: 10px; font-size: 11px; color: #fff; }
+.type { text-align: left; width: 100%; }
+.type .big { font-size: 84px; font-weight: 800; letter-spacing: -.05em; line-height: 1; }
+.type p { color: var(--mute); margin-top: 10px; font-size: 14px; }
+.type .row { font-size: 22px; font-weight: 600; margin-top: 14px; letter-spacing: -.01em; }
+.bar { width: 92%; background: rgba(255,255,255,.85); border: 1px solid #fff; border-radius: 999px; padding: 10px 12px 10px 16px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 20px 40px -24px rgba(60,40,160,.4); font-weight: 800; font-size: 15px; }
+.bar i { font-style: normal; display: flex; align-items: center; gap: 10px; }
+.btn { background: linear-gradient(135deg, #6c5ce7, #5443d0); color: #fff; border-radius: 999px; padding: 9px 16px; font-size: 13px; font-weight: 600; }
+.icons { display: flex; gap: 18px; align-items: flex-end; margin-top: 22px; }
+.app { border-radius: 26%; background: #fff; display: grid; place-items: center; box-shadow: 0 16px 30px -18px rgba(60,40,160,.5); }
+.card { width: 300px; height: 176px; border-radius: 16px; background: #fff; color: var(--ink); padding: 22px; display: flex; flex-direction: column; justify-content: space-between; transform: rotate(-5deg); box-shadow: 0 30px 50px -24px rgba(0,0,0,.6); }
+.card small { color: var(--mute); font-size: 12px; }
+.card b { font-size: 18px; font-weight: 800; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.chip { background: #fff; border: 1px solid rgba(108,92,231,.18); color: #5443d0; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 600; }
+.chip.on { background: var(--violet); color: #fff; }
+.note { max-width: 1320px; margin: 22px auto 0; color: #b9b6e6; font-size: 14px; }
+@media (max-width: 900px) { .board { grid-template-columns: 1fr; } body { padding: 14px; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6c5ce7"/><stop offset="1" stop-color="#d6589f"/></linearGradient>
+    <symbol id="m" viewBox="0 0 64 64">
+      <rect x="4" y="4" width="56" height="50" rx="17" fill="var(--f, url(#g))"/>
+      <path d="M15 50 11 62 29 53z" fill="var(--f, url(#g))"/>
+      <path d="M20 42 32 16 44 42" fill="none" stroke="var(--s, #fff)" stroke-width="5.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M25.6 33.2Q32 37.4 38.4 33.2" fill="none" stroke="var(--s, #fff)" stroke-width="4.2" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<main class="board">
+  <section class="p soft"><span class="n">01</span><span class="l">Логотип</span>
+    <div class="lockup"><svg class="mark" width="96" height="96"><use href="#m"/></svg><div><b>Английский</b><span>в Махачкале</span></div></div>
+  </section>
+
+  <section class="p"><span class="n">02</span><span class="l">Из чего сложен знак</span>
+    <svg viewBox="0 0 360 150" width="92%" aria-label="Реплика плюс вершина равно знак">
+      <g fill="none" stroke="#6c5ce7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="14" y="30" width="78" height="68" rx="22"/><path d="M30 96 24 112 50 100"/>
+        <path d="M150 96 182 34 214 96"/><path d="M134 96h96" stroke-dasharray="3 7" opacity=".5"/>
+      </g>
+      <text x="112" y="74" font-size="26" fill="#5f5e82" text-anchor="middle">+</text>
+      <text x="246" y="74" font-size="26" fill="#5f5e82" text-anchor="middle">=</text>
+      <use href="#m" x="266" y="24" width="88" height="88"/>
+      <g font-size="12" fill="#5f5e82" text-anchor="middle"><text x="53" y="138">разговор</text><text x="182" y="138">буква A и горы</text><text x="310" y="138">знак</text></g>
+    </svg>
+  </section>
+
+  <section class="p soft"><span class="n">03</span><span class="l">На сайте и в телефоне</span>
+    <div class="bar"><i><svg width="30" height="30"><use href="#m"/></svg>Английский в Махачкале</i><span class="btn">Пробный урок</span></div>
+    <div class="icons">
+      <div class="app" style="width:84px;height:84px"><svg width="58" height="58"><use href="#m"/></svg></div>
+      <div class="app" style="width:52px;height:52px"><svg width="36" height="36"><use href="#m"/></svg></div>
+      <div class="app" style="width:30px;height:30px"><svg width="21" height="21"><use href="#m"/></svg></div>
+    </div>
+  </section>
+
+  <section class="p grad"><span class="n">04</span><span class="l">Идея</span>
+    <p class="tag">Ваш английский.<br>Ваш темп.</p>
+  </section>
+
+  <section class="p"><span class="n">05</span><span class="l">Цвета</span>
+    <div class="sw">
+      <div style="background:#6c5ce7">#6C5CE7</div><div style="background:#d6589f">#D6589F</div>
+      <div style="background:#17163a">#17163A</div><div style="background:#f4f2ff;color:#5f5e82;border:1px solid #dcd7fb">#F4F2FF</div>
+    </div>
+  </section>
+
+  <section class="p"><span class="n">06</span><span class="l">Шрифт — Manrope</span>
+    <div class="type"><div class="big">Аа Aa</div><div class="row">Говорим с первого занятия</div><p>Заголовки — жирное начертание 800, текст — 400 и 500</p></div>
+  </section>
+
+  <section class="p dark"><span class="n">07</span><span class="l">Визитка</span>
+    <div class="card"><svg width="44" height="44"><use href="#m"/></svg><div><b>Джамиля</b><br><small>преподаватель английского · Махачкала и онлайн</small></div></div>
+  </section>
+
+  <section class="p dark"><span class="n">08</span><span class="l">Знак на тёмном</span>
+    <svg width="150" height="150" style="--f:#fff;--s:#6c5ce7"><use href="#m"/></svg>
+  </section>
+
+  <section class="p soft"><span class="n">09</span><span class="l">Детали интерфейса</span>
+    <div class="chips"><span class="chip on">Онлайн</span><span class="chip">Офлайн в Махачкале</span><span class="chip">✦ Уровень C1</span><span class="chip">Для женщин</span><span class="chip">Для подростков</span></div>
+  </section>
+</main>
+<p class="note">Файлы логотипа лежат в этой же папке: logo-mark.svg (основной), logo-mark-ink.svg (тёмный), logo-mark-white.svg (на цветном фоне), logo-horizontal.svg (с названием).</p>
+</body>
+</html>
