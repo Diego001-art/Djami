@@ -12,9 +12,9 @@
 <meta property="og:description" content="Оставьте заявку или напишите напрямую. Занятия онлайн и офлайн в Махачкале.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=5">
+<link rel="stylesheet" href="css/style.css?v=6">
 <script>document.documentElement.className = 'js'</script>
-<script src="js/site.js?v=5" defer></script>
+<script src="js/site.js?v=6" defer></script>
 <!--
   Микроразметка LocalBusiness. Добавьте блок ниже (убрав этот комментарий) на главную и на эту страницу,
   когда будут известны достоверные данные: имя или название, телефон, адрес, домен сайта.
@@ -164,7 +164,8 @@
             <small id="f-contact-hint" class="field-hint">Если записываете подростка, укажите, пожалуйста, контакт родителя.</small>
           </div>
 
-          <label class="consent"><input type="checkbox" name="consent" required><span>Соглашаюсь на обработку персональных данных в соответствии с <a href="politika-konfidentsialnosti.html">политикой конфиденциальности</a></span></label>
+          <label class="consent"><input type="checkbox" name="consent" required><span>Даю <a href="soglasie.html">согласие на обработку персональных данных</a>. С <a href="politika-konfidentsialnosti.html">политикой обработки персональных данных</a> ознакомлен(а).</span></label>
+          <label class="consent" data-parent-consent hidden><input type="checkbox" name="parent_consent"><span>Я — родитель или законный представитель ученика и даю согласие на обработку его персональных данных на тех же условиях.</span></label>
           <div class="hp" aria-hidden="true"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
           <button class="btn" type="submit">Отправить заявку</button>
           <p class="form-status" role="status" aria-live="polite"></p>
@@ -202,7 +203,7 @@
         </ul>
       </div>
     </div>
-    <p class="footer-bottom">© 2026 Джамиля · <a href="politika-konfidentsialnosti.html">Политика конфиденциальности</a></p>
+    <p class="footer-bottom">© 2026 <span class="fill">[Фамилия Имя Отчество]</span>, <span class="fill">[статус: самозанятая или ИП]</span>, ИНН <span class="fill">[ИНН]</span> · <span class="fill">[e-mail]</span> · <a href="politika-konfidentsialnosti.html">Политика</a> · <a href="soglasie.html">Согласие</a></p>
   </div>
 </footer>
 

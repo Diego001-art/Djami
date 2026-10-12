@@ -332,6 +332,9 @@ fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 .form-status.is-ok { color: var(--ok); background: rgba(29, 122, 76, .1); }
 .form-status.is-error { color: var(--danger); background: rgba(179, 38, 30, .08); }
 .hp { position: absolute; left: -9999px; }
+[hidden] { display: none !important; }
+.form.is-off > :not(h2):not(.form-off-note) { display: none; }
+.form-off-note { margin: 0; padding: 16px 18px; border-radius: var(--radius-sm); background: var(--accent-soft); color: var(--ink); font-weight: 500; }
 
 /* Блок записи на главной */
 .signup { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 44px; align-items: start; padding: 52px; border-radius: 36px; background: var(--gradient); color: #fff; box-shadow: 0 40px 80px -44px rgba(60, 40, 160, .6); }

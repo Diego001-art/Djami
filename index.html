@@ -12,9 +12,9 @@
 <meta property="og:description" content="Занятия английским для путешествий, учёбы и повседневного общения. Программа подбирается под возраст, уровень и цель.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=5">
+<link rel="stylesheet" href="css/style.css?v=6">
 <script>document.documentElement.className = 'js'</script>
-<script src="js/site.js?v=5" defer></script>
+<script src="js/site.js?v=6" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -306,6 +306,13 @@
             <input id="q-contact" name="contact" type="text" autocomplete="tel" required>
           </div>
           <fieldset class="field">
+            <legend>Кто будет заниматься</legend>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="age" value="Взрослый" required><span>Взрослый</span></label>
+              <label class="opt"><input type="radio" name="age" value="Подросток"><span>Подросток</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="field">
             <legend>Формат занятий</legend>
             <div class="opts">
               <label class="opt"><input type="radio" name="format" value="Онлайн" required><span>Онлайн</span></label>
@@ -313,7 +320,8 @@
               <label class="opt"><input type="radio" name="format" value="Пока выбираю"><span>Пока выбираю</span></label>
             </div>
           </fieldset>
-          <label class="consent"><input type="checkbox" name="consent" required><span>Соглашаюсь на обработку персональных данных в соответствии с <a href="politika-konfidentsialnosti.html">политикой конфиденциальности</a></span></label>
+          <label class="consent"><input type="checkbox" name="consent" required><span>Даю <a href="soglasie.html">согласие на обработку персональных данных</a>. С <a href="politika-konfidentsialnosti.html">политикой обработки персональных данных</a> ознакомлен(а).</span></label>
+          <label class="consent" data-parent-consent hidden><input type="checkbox" name="parent_consent"><span>Я — родитель или законный представитель ученика и даю согласие на обработку его персональных данных на тех же условиях.</span></label>
           <div class="hp" aria-hidden="true"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
           <button class="btn" type="submit">Записаться на пробный урок</button>
           <p class="form-status" role="status" aria-live="polite"></p>
@@ -349,7 +357,7 @@
         </ul>
       </div>
     </div>
-    <p class="footer-bottom">© 2026 Джамиля · <a href="politika-konfidentsialnosti.html">Политика конфиденциальности</a></p>
+    <p class="footer-bottom">© 2026 <span class="fill">[Фамилия Имя Отчество]</span>, <span class="fill">[статус: самозанятая или ИП]</span>, ИНН <span class="fill">[ИНН]</span> · <span class="fill">[e-mail]</span> · <a href="politika-konfidentsialnosti.html">Политика</a> · <a href="soglasie.html">Согласие</a></p>
   </div>
 </footer>
 

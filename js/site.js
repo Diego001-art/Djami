@@ -1,5 +1,5 @@
-// Адрес обработчика заявок. Укажите URL сервиса приёма форм или собственного скрипта,
-// чтобы заявки приходили на почту или в мессенджер. Пока поле пустое, форма ничего не отправляет.
+// Адрес обработчика заявок. Нужен российский сервис приёма заявок (данные должны храниться в России),
+// с которым заключён договор-поручение. Пока поле пустое, форма на сайте скрыта.
 const FORM_ENDPOINT = '';
 
 // Счётчики аналитики. Пока поля пустые, сайт ничего никуда не отправляет и не показывает плашку о cookie.
@@ -37,7 +37,7 @@ function startAnalytics() {
     window.ym = window.ym || function () { (window.ym.a = window.ym.a || []).push(arguments); };
     window.ym.l = Date.now();
     loadScript('https://mc.yandex.ru/metrika/tag.js');
-    window.ym(Number(ANALYTICS.yandexMetrika), 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
+    window.ym(Number(ANALYTICS.yandexMetrika), 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: false });
   }
   if (ANALYTICS.ga4) {
     window.dataLayer = window.dataLayer || [];
@@ -208,15 +208,32 @@ document.querySelectorAll('form[data-lead]').forEach((form) => {
     status.textContent = text;
   };
 
+  // Пока обработчик не подключён, данные собирать нельзя: вместо полей показываем пояснение
+  if (!FORM_ENDPOINT) {
+    const note = document.createElement('p');
+    note.className = 'form-off-note';
+    note.textContent = 'Онлайн-запись скоро откроется. Пока напишите или позвоните напрямую.';
+    form.classList.add('is-off');
+    form.append(note);
+    return;
+  }
+
+  // Галочка родителя нужна, только если записывают подростка
+  const parentConsent = form.querySelector('[data-parent-consent]');
+  if (parentConsent) {
+    form.addEventListener('change', () => {
+      const teen = form.querySelector('input[name="age"]:checked')?.value === 'Подросток';
+      parentConsent.hidden = !teen;
+      parentConsent.querySelector('input').required = teen;
+      if (!teen) parentConsent.querySelector('input').checked = false;
+    });
+    form.addEventListener('reset', () => { parentConsent.hidden = true; parentConsent.querySelector('input').required = false; });
+  }
+
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const data = new FormData(form);
     if (data.get('website')) return; // поле-ловушка: его заполняют только боты
-
-    if (!FORM_ENDPOINT) {
-      say('Форма пока не подключена: укажите адрес обработчика в файле js/site.js.', 'error');
-      return;
-    }
 
     button.disabled = true;
     say('Отправляю заявку…');
